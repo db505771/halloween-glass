@@ -1,74 +1,35 @@
 <style>
-/* ORANGE LIQUID GLASS — FATTY FAMILY */
-.orange-glass {
+.orange-liquid-glass {
+  width: 220px;
+  height: 130px;
+  border-radius: 32px;
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 178, 93, 0.19),
-      rgba(255, 119, 43, 0.09) 48%,
-      rgba(255, 220, 166, 0.07)
-    );
-  backdrop-filter: blur(24px) saturate(150%);
-  -webkit-backdrop-filter: blur(24px) saturate(150%);
-  border: 1px solid rgba(255, 208, 156, 0.25);
-  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 221, 174, 0.38),
+    rgba(255, 151, 65, 0.22) 45%,
+    rgba(224, 87, 23, 0.30)
+  );
+  border: 1px solid rgba(255, 228, 193, 0.55);
   box-shadow:
-    inset 0 1px 0 rgba(255, 244, 222, 0.24),
-    inset 0 -1px 0 rgba(255, 142, 62, 0.10),
-    0 8px 32px rgba(12, 5, 20, 0.12);
-  color: #fffaf4;
+    inset 0 1px 2px rgba(255, 255, 255, 0.55),
+    inset 0 -2px 5px rgba(255, 126, 38, 0.18),
+    0 0 18px rgba(255, 132, 47, 0.12);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
 }
-/* Soft glossy reflection */
-.orange-glass::before {
+.orange-liquid-glass::before {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 42%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  filter: blur(12px);
   pointer-events: none;
-  background: linear-gradient(
-    125deg,
-    rgba(255, 255, 255, 0.13) 0%,
-    rgba(255, 255, 255, 0.035) 25%,
-    transparent 48%,
-    rgba(255, 174, 94, 0.045) 100%
-  );
-}
-/* Keep card content above the reflection */
-.orange-glass > * {
-  position: relative;
-  z-index: 1;
-}
-/* Optional stronger orange glass */
-.orange-glass-strong {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 151, 64, 0.29),
-      rgba(218, 83, 27, 0.17)
-    );
-  border-color: rgba(255, 190, 123, 0.34);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 239, 213, 0.28),
-    0 8px 30px rgba(255, 105, 30, 0.08);
-}
-/* Optional subtle orange outline */
-.orange-glass-outline {
-  border: 1px solid rgba(255, 174, 99, 0.38);
-}
-/* Optional pill-shaped glass */
-.orange-glass-pill {
-  border-radius: 999px;
-  padding: 10px 18px;
-}
-/* iOS devices that don't support backdrop blur */
-@supports not (
-  (backdrop-filter: blur(1px)) or
-  (-webkit-backdrop-filter: blur(1px))
-) {
-  .orange-glass {
-    background: rgba(100, 49, 35, 0.88);
-  }
 }
 </style>
+<div class="orange-liquid-glass"></div>
