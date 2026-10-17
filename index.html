@@ -2,17 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <title>Soft Orange Liquid Glass</title>
-
+  <title>Orange Liquid Glass</title>
   <style>
     * {
       box-sizing: border-box;
     }
-
     html,
     body {
       margin: 0 !important;
@@ -22,115 +18,93 @@
       background: transparent !important;
       overflow: hidden;
     }
-
     body {
       -webkit-tap-highlight-color: transparent;
     }
-
     .liquid-glass-orange {
       appearance: none;
       -webkit-appearance: none;
-
       display: block;
       position: relative;
       isolation: isolate;
-
       width: 100%;
       height: 100%;
-
       margin: 0;
       padding: 0;
       outline: none;
       border: none;
-
       border-radius: 28px;
       overflow: hidden;
-
-      /* Clean clipping for iOS WebViews */
+      /* Smooth clipping for iOS WebViews */
       -webkit-mask-image: -webkit-radial-gradient(white, black);
-
-      /* Soft translucent orange tint */
+      /* Soft, translucent orange tint */
       background: linear-gradient(
         135deg,
         rgba(255, 224, 190, 0.30) 0%,
         rgba(255, 190, 145, 0.22) 45%,
         rgba(255, 155, 95, 0.25) 100%
       );
-
-      /* Frosted liquid-glass effect */
+      /* Frosted glass blur */
       backdrop-filter: blur(25px) saturate(180%);
       -webkit-backdrop-filter: blur(25px) saturate(180%);
-
-      /* Delicate white highlights */
+      /* ORANGE EDGES — no white border */
       box-shadow:
-        inset 0 1.5px 2px rgba(255, 255, 255, 0.48),
-        inset 0 -1px 2px rgba(255, 255, 255, 0.18),
-        0 8px 24px rgba(0, 0, 0, 0.10);
-
+        inset 0 1.5px 2px rgba(255, 183, 105, 0.65),
+        inset 0 -1px 2px rgba(255, 133, 55, 0.35),
+        0 8px 24px rgba(255, 135, 55, 0.10);
       transition:
         transform 0.15s ease,
         background 0.15s ease;
-
       -webkit-tap-highlight-color: transparent;
       cursor: pointer;
     }
-
-    /* Soft reflection across the top */
+    /* Orange glossy reflection at the top */
     .liquid-glass-orange::before {
       content: "";
       position: absolute;
       z-index: 1;
-
       top: 0;
       left: 4%;
-
       width: 92%;
       height: 42%;
-
       border-radius: 50%;
-
       background: linear-gradient(
         180deg,
-        rgba(255, 250, 240, 0.30) 0%,
-        rgba(255, 255, 255, 0.10) 38%,
-        rgba(255, 255, 255, 0) 100%
+        rgba(255, 190, 115, 0.42) 0%,
+        rgba(255, 160, 80, 0.20) 38%,
+        rgba(255, 140, 60, 0) 100%
       );
-
       filter: blur(9px);
       pointer-events: none;
     }
-
-    /* Very subtle warm glow near the bottom */
+    /* Gentle orange glow near the bottom */
     .liquid-glass-orange::after {
       content: "";
       position: absolute;
       z-index: 1;
-
       left: 8%;
       right: 8%;
       bottom: -14%;
-
       height: 38%;
       border-radius: 50%;
-
-      background: rgba(255, 165, 95, 0.12);
-
+      background: rgba(255, 145, 55, 0.14);
       filter: blur(20px);
       pointer-events: none;
     }
-
-    /* Gentle touch feedback */
+    /* Touch feedback */
     .liquid-glass-orange:active {
       transform: scale(0.98);
-
       background: linear-gradient(
         135deg,
-        rgba(255, 230, 205, 0.38) 0%,
-        rgba(255, 190, 145, 0.28) 50%,
-        rgba(255, 165, 110, 0.30) 100%
+        rgba(255, 220, 175, 0.36) 0%,
+        rgba(255, 175, 105, 0.28) 50%,
+        rgba(255, 145, 70, 0.30) 100%
       );
+      box-shadow:
+        inset 0 1.5px 2px rgba(255, 183, 105, 0.75),
+        inset 0 -1px 2px rgba(255, 133, 55, 0.45),
+        0 6px 18px rgba(255, 135, 55, 0.14);
     }
-
     @media (prefers-reduced-motion: reduce) {
       .liquid-glass-orange {
         transition: none;
@@ -138,7 +112,6 @@
     }
   </style>
 </head>
-
 <body>
   <button
     class="liquid-glass-orange"
