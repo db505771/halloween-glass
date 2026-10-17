@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Orange Liquid Glass</title>
+
+  <title>Soft Orange Liquid Glass</title>
+
   <style>
     * {
       box-sizing: border-box;
     }
+
     html,
     body {
       margin: 0 !important;
@@ -18,97 +22,115 @@
       background: transparent !important;
       overflow: hidden;
     }
+
     body {
       -webkit-tap-highlight-color: transparent;
     }
+
     .liquid-glass-orange {
       appearance: none;
       -webkit-appearance: none;
+
       display: block;
+      position: relative;
+      isolation: isolate;
+
       width: 100%;
       height: 100%;
+
       margin: 0;
       padding: 0;
       outline: none;
       border: none;
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
+
       border-radius: 28px;
+      overflow: hidden;
+
+      /* Clean clipping for iOS WebViews */
       -webkit-mask-image: -webkit-radial-gradient(white, black);
-      /*
-        ORANGE LIQUID GLASS
-        A stronger orange tint so it stays visible
-        against a purple background.
-      */
+
+      /* Soft translucent orange tint */
       background: linear-gradient(
         135deg,
-        rgba(255, 190, 105, 0.72) 0%,
-        rgba(255, 139, 48, 0.64) 42%,
-        rgba(255, 104, 25, 0.68) 72%,
-        rgba(236, 91, 25, 0.72) 100%
+        rgba(255, 224, 190, 0.30) 0%,
+        rgba(255, 190, 145, 0.22) 45%,
+        rgba(255, 155, 95, 0.25) 100%
       );
-      backdrop-filter: blur(25px) saturate(210%);
-      -webkit-backdrop-filter: blur(25px) saturate(210%);
-      /*
-        Soft white highlights — no dark outline.
-      */
+
+      /* Frosted liquid-glass effect */
+      backdrop-filter: blur(25px) saturate(180%);
+      -webkit-backdrop-filter: blur(25px) saturate(180%);
+
+      /* Delicate white highlights */
       box-shadow:
-        inset 0 1.5px 2px rgba(255, 255, 255, 0.65),
-        inset 0 -1px 2px rgba(255, 255, 255, 0.24),
-        0 8px 24px rgba(0, 0, 0, 0.12);
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.48),
+        inset 0 -1px 2px rgba(255, 255, 255, 0.18),
+        0 8px 24px rgba(0, 0, 0, 0.10);
+
       transition:
         transform 0.15s ease,
         background 0.15s ease;
+
       -webkit-tap-highlight-color: transparent;
       cursor: pointer;
     }
-    /*
-      Glossy reflection across the top.
-    */
+
+    /* Soft reflection across the top */
     .liquid-glass-orange::before {
       content: "";
       position: absolute;
       z-index: 1;
+
       top: 0;
       left: 4%;
+
       width: 92%;
       height: 42%;
+
       border-radius: 50%;
+
       background: linear-gradient(
         180deg,
-        rgba(255, 248, 230, 0.48) 0%,
-        rgba(255, 230, 195, 0.18) 38%,
+        rgba(255, 250, 240, 0.30) 0%,
+        rgba(255, 255, 255, 0.10) 38%,
         rgba(255, 255, 255, 0) 100%
       );
+
       filter: blur(9px);
       pointer-events: none;
     }
-    /*
-      Gentle warm glow along the lower edge.
-    */
+
+    /* Very subtle warm glow near the bottom */
     .liquid-glass-orange::after {
       content: "";
       position: absolute;
       z-index: 1;
+
       left: 8%;
       right: 8%;
       bottom: -14%;
+
       height: 38%;
       border-radius: 50%;
-      background: rgba(255, 142, 49, 0.28);
+
+      background: rgba(255, 165, 95, 0.12);
+
       filter: blur(20px);
       pointer-events: none;
     }
+
+    /* Gentle touch feedback */
     .liquid-glass-orange:active {
       transform: scale(0.98);
+
       background: linear-gradient(
         135deg,
-        rgba(255, 205, 135, 0.82) 0%,
-        rgba(255, 145, 55, 0.76) 50%,
-        rgba(255, 105, 25, 0.78) 100%
+        rgba(255, 230, 205, 0.38) 0%,
+        rgba(255, 190, 145, 0.28) 50%,
+        rgba(255, 165, 110, 0.30) 100%
       );
     }
+
     @media (prefers-reduced-motion: reduce) {
       .liquid-glass-orange {
         transition: none;
@@ -116,6 +138,7 @@
     }
   </style>
 </head>
+
 <body>
   <button
     class="liquid-glass-orange"
