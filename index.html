@@ -42,8 +42,8 @@ html, body {
     rgba(255,125,0,0) 50%,
     rgba(255,125,0,.012) 100%);
 
-  backdrop-filter: blur(3px) saturate(115%);
-  -webkit-backdrop-filter: blur(3px) saturate(115%);
+  backdrop-filter: blur(7px) saturate(115%);
+  -webkit-backdrop-filter: blur(7px) saturate(115%);
 
   /* thin edge light only, no white glow in the middle */
   box-shadow:
@@ -169,7 +169,7 @@ html, body {
     svg.innerHTML = '<filter id="lg" filterUnits="userSpaceOnUse" x="0" y="0" width="' + w + '" height="' + h + '" color-interpolation-filters="sRGB">' +
       '<feImage x="0" y="0" width="' + w + '" height="' + h + '" preserveAspectRatio="none" result="m" href="data:image/svg+xml,' + encodeURIComponent(m) + '"/>' +
       fx + '</filter>';
-    b.style.backdropFilter = 'url(#lg) blur(2px) saturate(115%)';
+    b.style.backdropFilter = 'url(#lg) blur(5px) saturate(115%)';
   }
   window.setGlassBackdrop = function (css) {
     document.body.style.setProperty('background', css, 'important');
